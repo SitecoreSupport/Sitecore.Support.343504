@@ -11,7 +11,7 @@
   <input type="hidden" id="scPlainValue" name="scPlainValue" />
   <input type="hidden" id="scLayoutDefinition" name="scLayoutDefinition" />
 
-  <sc:CodeBeside runat="server" Type="Sitecore.Shell.Applications.WebEdit.WebEditRibbonForm,Sitecore.ExperienceEditor" />
+  <sc:CodeBeside runat="server" Type="Sitecore.Support.Shell.Applications.WebEdit.WebEditRibbonForm,Sitecore.Support.343504" />
 
   <form id="RibbonForm" runat="server">
     <input id="__FRAMENAME" type="hidden" value="Shell" />
