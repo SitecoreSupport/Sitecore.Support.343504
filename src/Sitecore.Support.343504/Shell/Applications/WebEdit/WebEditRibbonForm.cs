@@ -563,6 +563,14 @@ namespace Sitecore.Support.Shell.Applications.WebEdit
         private void RenderNotifications(Item item)
         {
             Assert.ArgumentNotNull(item, "item");
+            
+            #region Sitecore.Support.343504
+            if (this.Notifications == null)
+            {
+                return;
+            }
+            #endregion Sitecore.Support.343504
+
             if (WebUtil.GetQueryString("mode") != "edit")
             {
                 return;
