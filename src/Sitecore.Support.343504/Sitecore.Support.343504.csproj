@@ -61,9 +61,6 @@
     <Content Include="sitecore\shell\Applications\WebEdit\WebEditRibbon.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\zzz\Sitecore.Support.343504.config" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
     <None Include="web.config" />
   </ItemGroup>

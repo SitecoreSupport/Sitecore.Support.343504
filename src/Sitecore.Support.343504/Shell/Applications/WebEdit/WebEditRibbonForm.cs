@@ -564,13 +564,6 @@ namespace Sitecore.Support.Shell.Applications.WebEdit
         {
             Assert.ArgumentNotNull(item, "item");
             
-            #region Sitecore.Support.343504
-            if (this.Notifications == null)
-            {
-                return;
-            }
-            #endregion Sitecore.Support.343504
-
             if (WebUtil.GetQueryString("mode") != "edit")
             {
                 return;
@@ -578,8 +571,9 @@ namespace Sitecore.Support.Shell.Applications.WebEdit
             System.Collections.Generic.List<PageEditorNotification> pageEditorNotifications = (System.Collections.Generic.List<PageEditorNotification>)ItemUtility.GetPageEditorNotifications(item);
             if (pageEditorNotifications.Count == 0)
             {
-                this.Notifications.Visible = false;
+                #region Sitecore.Support.343504
                 return;
+                #endregion Sitecore.Support.343504
             }
             HtmlTextWriter htmlTextWriter = new HtmlTextWriter(new System.IO.StringWriter());
             int count = pageEditorNotifications.Count;
