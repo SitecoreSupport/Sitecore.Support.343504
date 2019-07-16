@@ -591,7 +591,7 @@ namespace Sitecore.Support.Shell.Applications.WebEdit
                 }
                 WebEditRibbonForm.RenderNotification(htmlTextWriter, notification, text);
             }
-            this.Notifications.InnerHtml = htmlTextWriter.InnerWriter.ToString();
+            this.Notifications.InnerHtml = htmlTextWriter.InnerWriter.ToString(); 
         }
     }
 }
