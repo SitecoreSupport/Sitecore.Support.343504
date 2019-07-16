@@ -564,16 +564,23 @@ namespace Sitecore.Support.Shell.Applications.WebEdit
         {
             Assert.ArgumentNotNull(item, "item");
             
+            #region Sitecore.Support.343504
+            if (this.Notifications == null)
+            {
+                return;
+            }
+            #endregion Sitecore.Support.343504
+
             if (WebUtil.GetQueryString("mode") != "edit")
             {
                 return;
             }
+
             System.Collections.Generic.List<PageEditorNotification> pageEditorNotifications = (System.Collections.Generic.List<PageEditorNotification>)ItemUtility.GetPageEditorNotifications(item);
             if (pageEditorNotifications.Count == 0)
             {
-                #region Sitecore.Support.343504
+                this.Notifications.Visible = false;
                 return;
-                #endregion Sitecore.Support.343504
             }
             HtmlTextWriter htmlTextWriter = new HtmlTextWriter(new System.IO.StringWriter());
             int count = pageEditorNotifications.Count;
@@ -591,7 +598,7 @@ namespace Sitecore.Support.Shell.Applications.WebEdit
                 }
                 WebEditRibbonForm.RenderNotification(htmlTextWriter, notification, text);
             }
-            this.Notifications.InnerHtml = htmlTextWriter.InnerWriter.ToString(); 
+            this.Notifications.InnerHtml = htmlTextWriter.InnerWriter.ToString();
         }
     }
 }
